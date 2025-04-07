@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .container{
+        height: 300px;
+        width: 400px;
+        text-align: center;
+        border: 2px solid;
+        align-items: center;
+        align-content: center;
+
+    }
+</style>
+<body>
+    <div class="container">Color Container </div>
+    <button onclick="changeColor()">Color Change</button>
+
+    <script>
+
+        function generateColor(){
+        let r= Math.floor(Math.random()*255);
+        let g=Math.floor(Math.random()*255);
+        let b=Math.floor(Math.random()*255);
+             
+        return `rgb(${r}, ${g}, ${b})` //backticks are used to pass variables between strings  isomg bacticks called as template laterals 
+        }
+        function changeColor()
+        {
+
+            let container = document.querySelector("div") //element kon target krte hai with element name , class and id but it will only check the first condition -- so in console it will return the first comdition outcomes 
+
+            let newColor = generateColor();
+
+            container.style.backgroundColor= newColor;
+            container.innerHTML= newColor  //Some Changes in innerHtml 
+
+
+        }
+
+
+    </script>
+</body>
+</html>
